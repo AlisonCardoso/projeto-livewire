@@ -14,8 +14,15 @@ return new class extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('city_id')->constrained('cities');
-            $table->string('rua');
-            $table->string('cep');
+            //$table->morphs('rel')->nulable();
+            $table->string('street', 100);
+            $table->string('number', 6);
+            $table->string('complement', 60);
+            $table->string('neightborhood', 50);
+            $table->string('city', 50);
+            $table->string('state', 50);
+            $table->string('zip_code', 20);
+
             $table->timestamps();
         });
     }
