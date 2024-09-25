@@ -12,7 +12,7 @@ class AddressesController extends Controller
      */
     public function index()
     {
-        //
+        return view('addresses.index');
     }
 
     /**
