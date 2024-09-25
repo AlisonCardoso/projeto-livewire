@@ -1,19 +1,41 @@
 <div>
-   <h1>teste</h1>
+    <form wire:submit.prevent="salvar">
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" wire:model="cep" placeholder="Digite o CEP">
+        </div>
 
-    <div class="w-full">
-        <x-input-label for="estado" :value="__('Estado')"/>
-        <select id="estado" name="estado" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" >
-            <option value="" selected>{{ __('Select a State') }}</option>
+        <div>
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" wire:model="rua" placeholder="Rua" readonly>
+        </div>
 
-        </select>
-    </div>
-
-        <div class="w-full">
-            <x-input-label for="cidade" :value="__('Cidade')"/>
-            <select id="cidada" name="estado" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" >
-                <option value="" selected>{{ __('Select a City') }}</option>
-
+        <div>
+            <label for="estado">Estado:</label>
+            <select wire:model="estadoSelecionado" id="estado">
+                <option value="">Selecione um estado</option>
+                @foreach($estados as $estado)
+                    <option value="{{ $estado->sigla }}">{{ $estado->nome }}</option>
+                @endforeach
             </select>
         </div>
+
+        <div>
+            <label for="municipio">Município:</label>
+            <select wire:model="municipioSelecionado" id="municipio">
+                <option value="">Selecione um município</option>
+                @foreach($municipios as $municipio)
+                    <option value="{{ $municipio->nome }}">{{ $municipio->nome }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <button type="submit">Salvar Endereço</button>
+    </form>
+
+    <script>
+        window.addEventListener('alert', event => {
+            alert(event.detail.message);
+        });
+    </script>
 </div>

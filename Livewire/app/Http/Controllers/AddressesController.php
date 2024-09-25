@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Addresses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AddressesController extends Controller
 {
@@ -12,6 +13,11 @@ class AddressesController extends Controller
      */
     public function index()
     {
+        $estados = json_decode(
+            Http::get('https://servicodados.ibge.gov.br/api/v1/localidades/estados',
+            ['orderby' =>'nome']
+            )->body()
+        );
         return view('addresses.index');
     }
 
