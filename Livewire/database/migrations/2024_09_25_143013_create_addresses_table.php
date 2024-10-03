@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('number', 6);
             $table->string('complement', 60);
             $table->string('neightborhood', 50);;
-            $table->string('zip_code', 20);
+            $table->string('zipcode', 20);
 
             $table->timestamps();
         });
