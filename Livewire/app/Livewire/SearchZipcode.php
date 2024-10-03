@@ -18,8 +18,8 @@ class SearchZipcode extends Component
     public string $zipcode = '';
     public string $street = '';
     public string $neighborhood = '';
-    public string $city = '';
-    public string $state = '';
+    public string $city = 'uva';
+    public string $state = 'pr';
 
     
 
@@ -29,7 +29,7 @@ class SearchZipcode extends Component
     {
     
         $response = Http::get("viacep.com.br/ws/{$value}/json/")->json();
-        dd($response);
+       // dd($response);
  
      
      $data = json_decode($response->getBody()->getContents(), true);
