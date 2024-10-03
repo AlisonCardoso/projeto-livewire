@@ -13,11 +13,11 @@ class AddressesController extends Controller
      */
     public function index()
     {
-        $estados = json_decode(
+      /* $estados = json_decode(
             Http::get('https://servicodados.ibge.gov.br/api/v1/localidades/estados',
             ['orderby' =>'nome']
             )->body()
-        );
+        );*/
         return view('addresses.index');
     }
 

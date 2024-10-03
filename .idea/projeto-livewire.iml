@@ -6,8 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Livewire/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/Livewire/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/Livewire/tests" isTestSource="true" packagePrefix="Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/Livewire/tests/Feature" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Livewire/tests/Unit" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Livewire/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/Livewire/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Livewire/vendor/carbonphp/carbon-doctrine-types" />
