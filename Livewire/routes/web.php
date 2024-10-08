@@ -28,5 +28,10 @@ Route::resource('/addresses', AddressesController::class);
 //Livewire Components
 Route::get('/search-zipcode', SearchZipcode::class)->name('search-zipcode');
 
+//Route::get('/', function() {return view('index');
+
+Route::get('/buscar-cep', BuscarCep::class)->name('buscar-cep');
+Route::get('/buscar-cnpj', SearchCnpj::class)->name('buscar-cnpj');
+
 
 require __DIR__.'/auth.php';

@@ -18,8 +18,8 @@ class SearchZipcode extends Component
     public string $zipcode = '';
     public string $street = '';
     public string $neighborhood = '';
-    public string $city = 'uva';
-    public string $state = 'pr';
+    public string $city = '';
+    public string $state = '';
 
     
 

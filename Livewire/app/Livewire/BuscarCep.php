@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Endereco;
+use App\Models\Address;
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
@@ -46,7 +46,7 @@ class BuscarCep extends Component
     public function save() {
         $this->validate();
 
-        Endereco::updateOrCreate(
+        Address::updateOrCreate(
             [
                 'cep' => $this->cep,
             ],
@@ -63,7 +63,7 @@ class BuscarCep extends Component
     }
 
     public function edit(string $id) {
-        $endereco = Endereco::find($id);
+        $endereco = Address::find($id);
 
         $this->cep = $endereco->cep;
         $this->state = $endereco->state;
@@ -73,7 +73,7 @@ class BuscarCep extends Component
     }
 
     public function remove(string $id) {
-        $endereco = Endereco::find($id);
+        $endereco = Address::find($id);
         $endereco?->delete();
 
         $this->render();
@@ -81,7 +81,7 @@ class BuscarCep extends Component
 
     public function render()
     {
-        $this->endereco = Endereco::all()->toArray();
+       $this->endereco = Address::all()->toArray();
 
         return view('livewire.buscar-cep');
     }
